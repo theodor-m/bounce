@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+    {% block content %}
+ <div class="container-fluid">
+    <br>
+        <br>
+        <br>
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Teds height predictor for drops
+			</h3>
+		</div>
+	</div>
+        <br>
+        <br>
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+            <form action="{{ url_for('predictdrop')}}" method="post" role="form">
+				<div class="form-group">
+
+					<label for="T1">
+						Time - 1
+					</label>
+					<input type="number" step="0.001" class="form-control" name="T1" />
+				</div>
+				<div class="form-group">
+
+					<label for="T2">
+						Time - 2
+					</label>
+					<input type="number" step="0.001" class="form-control" name="T2" />
+				</div>
+
+				<button type="submit" class="btn active btn-block btn-md btn-primary">
+					Submit
+				</button>
+			</form>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+
+     <br>
+        <br>
+ <div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+             <h3> {{ prediction_text }} </h3>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
